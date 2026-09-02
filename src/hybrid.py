@@ -13,7 +13,7 @@ class HybridRetriever:
         """
         self.documents = documents
         self.k = k
-        self.rrk_k = rrf_k
+        self.rrf_k = rrf_k
 
         vector_store = None
         vector_store = load_vector_store()

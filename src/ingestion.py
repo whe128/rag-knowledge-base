@@ -26,7 +26,7 @@ def load_documents(directory = "data/documents"):
             documents.extend(loader.load())
     return documents
 
-def split_documents(documents, chunk_size = 400, chunk_overlap = 150):
+def split_documents(documents, chunk_size = 300, chunk_overlap = 70):
     """
         split documents into chunks of text with the specified chunk size
         and  overlap

@@ -1,0 +1,13 @@
+0 - FAISS
+    Correct: 14/40
+    Accuracy: 35.00%
+
+# 1 - BM25
+    Correct: 35/40
+    Accuracy: 87.50%
+# 2 - Hybrid
+    Correct: 32/40
+    Accuracy: 80.00%
+# 3 - Hybrid + Reranker
+    Correct: 33/40
+    Accuracy: 82.50%
