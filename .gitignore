@@ -1,0 +1,13 @@
+# RAG vectore store
+faiss_index/
+
+# key files
+.env
+
+# python cache
+__pycache__/
+*.pyc
+
+# vs code configuration
+.vscode/
+.idea/
