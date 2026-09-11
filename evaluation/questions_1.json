@@ -238,5 +238,371 @@
     "question": "Who invented the Transformer architecture?",
     "reference_answer": "I don't know.",
     "category": "unanswerable"
+  },
+
+  {
+    "id": 41,
+    "question": "What is document chunking?",
+    "reference_answer": "Document chunking is the process of splitting a document into smaller text segments for retrieval and processing.",
+    "category": "chunking"
+  },
+  {
+    "id": 42,
+    "question": "Why is chunking necessary in RAG?",
+    "reference_answer": "Chunking makes large documents easier to index and allows retrieval to return smaller and more relevant pieces of information.",
+    "category": "chunking"
+  },
+  {
+    "id": 43,
+    "question": "What can happen if chunks are too large?",
+    "reference_answer": "Chunks that are too large may contain irrelevant information and reduce retrieval precision while consuming more context.",
+    "category": "reasoning"
+  },
+  {
+    "id": 44,
+    "question": "What can happen if chunks are too small?",
+    "reference_answer": "Chunks that are too small may lose important context and split related information across multiple chunks.",
+    "category": "reasoning"
+  },
+  {
+    "id": 45,
+    "question": "Why can chunk overlap be useful?",
+    "reference_answer": "Chunk overlap helps preserve information that crosses chunk boundaries and reduces the risk of losing contextual relationships.",
+    "category": "chunking"
+  },
+  {
+    "id": 46,
+    "question": "What is the purpose of document preprocessing before embedding?",
+    "reference_answer": "Document preprocessing cleans and structures the text so that the resulting chunks provide useful information for retrieval.",
+    "category": "pipeline"
+  },
+  {
+    "id": 47,
+    "question": "Why should document metadata sometimes be preserved during chunking?",
+    "reference_answer": "Metadata can provide useful context such as document source, section, title, or timestamp and can help identify retrieved information.",
+    "category": "reasoning"
+  },
+  {
+    "id": 48,
+    "question": "Why can splitting a document only by a fixed character count be problematic?",
+    "reference_answer": "Fixed-length splitting can separate sentences or related concepts and may produce chunks with poor semantic boundaries.",
+    "category": "reasoning"
+  },
+  {
+    "id": 49,
+    "question": "What is a good goal when choosing a chunk size?",
+    "reference_answer": "A good chunk size should preserve enough semantic context while remaining focused enough for precise retrieval.",
+    "category": "chunking"
+  },
+  {
+    "id": 50,
+    "question": "Can chunking affect retrieval performance?",
+    "reference_answer": "Yes. Chunk size, boundaries, and overlap can significantly affect whether relevant information is retrieved.",
+    "category": "evaluation"
+  },
+
+  {
+    "id": 51,
+    "question": "Why should queries and documents use the same embedding model?",
+    "reference_answer": "They should use the same embedding space so that their vector representations can be meaningfully compared.",
+    "category": "embedding"
+  },
+  {
+    "id": 52,
+    "question": "What does vector similarity measure in dense retrieval?",
+    "reference_answer": "Vector similarity measures how close the semantic representations of a query and candidate document are.",
+    "category": "semantic"
+  },
+  {
+    "id": 53,
+    "question": "Why is vector normalization useful for cosine similarity?",
+    "reference_answer": "Normalization makes vector magnitude equal and allows similarity to depend on the angle between vectors.",
+    "category": "technical"
+  },
+  {
+    "id": 54,
+    "question": "What happens if a document is embedded incorrectly?",
+    "reference_answer": "An incorrect embedding can place the document in an inappropriate location in vector space and reduce retrieval quality.",
+    "category": "failure_case"
+  },
+  {
+    "id": 55,
+    "question": "Why can a better embedding model improve RAG retrieval?",
+    "reference_answer": "A better embedding model can produce representations that more accurately capture semantic relationships between queries and documents.",
+    "category": "reasoning"
+  },
+  {
+    "id": 56,
+    "question": "What is a vector index?",
+    "reference_answer": "A vector index is a data structure used to efficiently search and retrieve vectors similar to a query vector.",
+    "category": "exact"
+  },
+  {
+    "id": 57,
+    "question": "Why is approximate nearest neighbor search useful?",
+    "reference_answer": "Approximate nearest neighbor search reduces search cost while providing sufficiently accurate similarity results for large vector collections.",
+    "category": "technical"
+  },
+  {
+    "id": 58,
+    "question": "What is the relationship between an embedding vector and its source chunk?",
+    "reference_answer": "The embedding vector represents the semantic content of its source chunk and is stored so the chunk can later be retrieved.",
+    "category": "pipeline"
+  },
+  {
+    "id": 59,
+    "question": "Can two different text chunks have similar embeddings?",
+    "reference_answer": "Yes. Different text chunks can have similar embeddings when they express similar semantic meanings.",
+    "category": "semantic"
+  },
+  {
+    "id": 60,
+    "question": "Why might dense retrieval fail on an exact identifier?",
+    "reference_answer": "Dense embeddings may not preserve exact lexical identifiers as strongly as lexical retrieval methods such as BM25.",
+    "category": "failure_case"
+  },
+
+  {
+    "id": 61,
+    "question": "What is lexical retrieval?",
+    "reference_answer": "Lexical retrieval retrieves documents based primarily on matching words or terms between the query and documents.",
+    "category": "exact"
+  },
+  {
+    "id": 62,
+    "question": "How does BM25 differ from dense retrieval?",
+    "reference_answer": "BM25 relies on lexical term matching, while dense retrieval relies on vector representations and semantic similarity.",
+    "category": "comparison"
+  },
+  {
+    "id": 63,
+    "question": "Why can BM25 retrieve a document that uses the exact query term?",
+    "reference_answer": "BM25 explicitly rewards relevant term occurrences, making exact lexical matches important for ranking.",
+    "category": "reasoning"
+  },
+  {
+    "id": 64,
+    "question": "Why can BM25 miss semantically related documents?",
+    "reference_answer": "BM25 depends on lexical overlap, so documents using different words or synonyms may receive lower scores.",
+    "category": "failure_case"
+  },
+  {
+    "id": 65,
+    "question": "Why can hybrid retrieval be more robust than using only BM25?",
+    "reference_answer": "Hybrid retrieval combines lexical matching with semantic similarity, allowing the system to handle both exact terms and different wording.",
+    "category": "hybrid"
+  },
+  {
+    "id": 66,
+    "question": "Why can hybrid retrieval be more robust than using only dense retrieval?",
+    "reference_answer": "Hybrid retrieval can preserve exact keyword matching that dense retrieval may not capture reliably.",
+    "category": "hybrid"
+  },
+  {
+    "id": 67,
+    "question": "What problem does RRF solve in hybrid retrieval?",
+    "reference_answer": "RRF combines ranked results from different retrieval systems without requiring their raw scores to be directly comparable.",
+    "category": "rrf"
+  },
+  {
+    "id": 68,
+    "question": "What happens when a document appears in both FAISS and BM25 rankings?",
+    "reference_answer": "Its RRF score receives contributions from both ranked lists, which can increase its final ranking.",
+    "category": "rrf"
+  },
+  {
+    "id": 69,
+    "question": "What happens to a document ranked highly by only one retrieval system in RRF?",
+    "reference_answer": "It still receives an RRF contribution from that retrieval system even if it does not appear in the other ranking.",
+    "category": "technical"
+  },
+  {
+    "id": 70,
+    "question": "Can RRF improve retrieval robustness?",
+    "reference_answer": "Yes. RRF can improve robustness by combining complementary ranking signals from multiple retrieval methods.",
+    "category": "reasoning"
+  },
+
+  {
+    "id": 71,
+    "question": "What is the main purpose of reranking?",
+    "reference_answer": "The main purpose of reranking is to improve the ordering of retrieved candidates according to query-document relevance.",
+    "category": "exact"
+  },
+  {
+    "id": 72,
+    "question": "How is a cross-encoder different from a bi-encoder?",
+    "reference_answer": "A bi-encoder independently encodes the query and document, while a cross-encoder processes them together to model their interaction.",
+    "category": "comparison"
+  },
+  {
+    "id": 73,
+    "question": "Why is a cross-encoder usually more accurate for reranking?",
+    "reference_answer": "A cross-encoder can directly model interactions between query and document tokens instead of comparing independently generated representations.",
+    "category": "reasoning"
+  },
+  {
+    "id": 74,
+    "question": "Why is a cross-encoder usually slower than dense retrieval?",
+    "reference_answer": "A cross-encoder must process each query-document pair jointly, making it computationally more expensive.",
+    "category": "technical"
+  },
+  {
+    "id": 75,
+    "question": "What is the role of the first-stage retriever when reranking is used?",
+    "reference_answer": "The first-stage retriever efficiently reduces the full document collection to a manageable candidate set for reranking.",
+    "category": "pipeline"
+  },
+  {
+    "id": 76,
+    "question": "Why not use the reranker to search the entire document collection?",
+    "reference_answer": "Using the reranker over the entire collection would be computationally expensive because every query-document pair would need to be evaluated.",
+    "category": "reasoning"
+  },
+  {
+    "id": 77,
+    "question": "What happens if the relevant document is not included in the reranker candidate set?",
+    "reference_answer": "The reranker cannot recover the missing document because it can only reorder documents that were retrieved by the first stage.",
+    "category": "failure_case"
+  },
+  {
+    "id": 78,
+    "question": "Does reranking replace first-stage retrieval?",
+    "reference_answer": "No. Reranking normally operates on candidates produced by first-stage retrieval.",
+    "category": "comparison"
+  },
+  {
+    "id": 79,
+    "question": "Can reranking improve precision without improving recall?",
+    "reference_answer": "Yes. Reranking can improve the ordering and precision of retrieved candidates even when the candidate set itself has unchanged recall.",
+    "category": "reasoning"
+  },
+  {
+    "id": 80,
+    "question": "What is a typical candidate flow in this RAG system?",
+    "reference_answer": "FAISS and BM25 produce candidates, RRF combines their rankings, and the reranker refines the resulting candidate order.",
+    "category": "pipeline"
+  },
+
+  {
+    "id": 81,
+    "question": "What is context construction in RAG?",
+    "reference_answer": "Context construction is the process of assembling retrieved document chunks into the context provided to the language model.",
+    "category": "generation"
+  },
+  {
+    "id": 82,
+    "question": "Why should retrieved context be relevant to the query?",
+    "reference_answer": "Relevant context gives the language model useful evidence and reduces the amount of distracting information.",
+    "category": "reasoning"
+  },
+  {
+    "id": 83,
+    "question": "What happens if irrelevant chunks are included in the context?",
+    "reference_answer": "Irrelevant chunks can distract the language model and may reduce answer accuracy or faithfulness.",
+    "category": "failure_case"
+  },
+  {
+    "id": 84,
+    "question": "What is hallucination in RAG?",
+    "reference_answer": "Hallucination occurs when the generated answer contains unsupported or incorrect information that is not grounded in the available evidence.",
+    "category": "generation"
+  },
+  {
+    "id": 85,
+    "question": "Can RAG completely eliminate hallucinations?",
+    "reference_answer": "No. RAG can provide external evidence and reduce hallucinations, but it cannot completely eliminate them.",
+    "category": "reasoning"
+  },
+  {
+    "id": 86,
+    "question": "What should an RAG system do when the answer is not contained in the documents?",
+    "reference_answer": "The system should avoid inventing an answer and should indicate that the information is not available in the retrieved knowledge.",
+    "category": "unanswerable"
+  },
+  {
+    "id": 87,
+    "question": "Why is an unanswerable evaluation set important for RAG?",
+    "reference_answer": "It tests whether the system can recognize missing information instead of generating unsupported answers.",
+    "category": "evaluation"
+  },
+  {
+    "id": 88,
+    "question": "What is grounded generation?",
+    "reference_answer": "Grounded generation produces answers that are supported by retrieved evidence or other explicitly provided context.",
+    "category": "generation"
+  },
+  {
+    "id": 89,
+    "question": "Why can a language model give a wrong answer even when the correct chunk was retrieved?",
+    "reference_answer": "The model may misunderstand the context, ignore relevant evidence, combine conflicting information, or generate unsupported content.",
+    "category": "failure_case"
+  },
+  {
+    "id": 90,
+    "question": "What is the relationship between retrieval quality and generation quality?",
+    "reference_answer": "Good retrieval provides useful evidence for generation, but strong retrieval alone does not guarantee a correct or faithful final answer.",
+    "category": "multi_concept"
+  },
+
+  {
+    "id": 91,
+    "question": "Why should RAG evaluation contain both exact and reasoning questions?",
+    "reference_answer": "Exact questions test direct factual retrieval, while reasoning questions test whether the system can use retrieved information to answer conceptual questions.",
+    "category": "evaluation"
+  },
+  {
+    "id": 92,
+    "question": "Why should RAG evaluation contain comparison questions?",
+    "reference_answer": "Comparison questions test whether the system can distinguish related retrieval methods and explain their different strengths and weaknesses.",
+    "category": "evaluation"
+  },
+  {
+    "id": 93,
+    "question": "What is a retrieval failure?",
+    "reference_answer": "A retrieval failure occurs when the relevant evidence is not included among the retrieved candidates.",
+    "category": "failure_case"
+  },
+  {
+    "id": 94,
+    "question": "What is a generation failure in RAG?",
+    "reference_answer": "A generation failure occurs when the model produces an incorrect or unsupported answer despite the available retrieval context.",
+    "category": "failure_case"
+  },
+  {
+    "id": 95,
+    "question": "Why is Recall@K useful for diagnosing RAG systems?",
+    "reference_answer": "Recall@K helps determine whether relevant evidence is being retrieved within the top K results.",
+    "category": "evaluation"
+  },
+  {
+    "id": 96,
+    "question": "Why is MRR useful when the first relevant document should appear near the top?",
+    "reference_answer": "MRR rewards systems that place the first relevant document at a high rank.",
+    "category": "evaluation"
+  },
+  {
+    "id": 97,
+    "question": "If Recall@5 is low, what part of the RAG system should be investigated first?",
+    "reference_answer": "The retrieval stage should be investigated first, including chunking, embeddings, lexical retrieval, candidate size, and indexing.",
+    "category": "diagnosis"
+  },
+  {
+    "id": 98,
+    "question": "If Recall@5 is high but the final answers are poor, what should be investigated?",
+    "reference_answer": "The generation stage should be investigated, including context construction, prompt design, model behavior, and answer grounding.",
+    "category": "diagnosis"
+  },
+  {
+    "id": 99,
+    "question": "If BM25 outperforms dense retrieval on a technical knowledge base, is that necessarily a problem?",
+    "reference_answer": "No. Technical knowledge bases often contain exact terminology and identifiers, so lexical retrieval can perform very well on such data.",
+    "category": "reasoning"
+  },
+  {
+    "id": 100,
+    "question": "If a query cannot be answered from the knowledge base, what is the correct RAG behavior?",
+    "reference_answer": "The system should recognize that the required evidence is unavailable and avoid fabricating an unsupported answer.",
+    "category": "unanswerable"
   }
 ]
